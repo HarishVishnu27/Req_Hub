@@ -1,0 +1,8 @@
+fastapi
+pymongo
+python-dotenv
+setuptools
+email-validator
+uvicorn
+python-multipart
+werkzeug
