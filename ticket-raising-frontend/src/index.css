@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+:root{
+  --brand: #0b2e83;       /* example: replace with logo blue */
+  --brand-hover: #1140b5; /* slightly lighter hover */
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-200 text-slate-900 antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-300/70 bg-slate-50 shadow-sm;
+  }
+
+  .label {
+    @apply text-sm font-medium text-slate-700;
+  }
+
+  .input {
+    @apply mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900
+      placeholder:text-slate-400
+      focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500;
+  }
+
+  /* ✅ brand primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold
+      transition active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed;
+    background: var(--brand);
+    color: white;
+  }
+  .btn-primary:hover {
+    background: var(--brand-hover);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold
+      transition active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed
+      bg-white text-slate-900 border border-slate-300 hover:bg-slate-100;
+  }
+
+  .banner-success {
+    @apply rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm text-emerald-900;
+  }
+
+  .banner-error {
+    @apply rounded-xl border border-rose-300 bg-rose-50 px-3 py-2 text-sm text-rose-900;
+  }
+
+  .banner-info {
+    @apply rounded-xl border border-slate-300 bg-slate-100 px-3 py-2 text-sm text-slate-900;
+  }
+}
